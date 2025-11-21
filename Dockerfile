@@ -1,18 +1,4 @@
-FROM node:18-alpine
-
-WORKDIR /app
-
-# Copia os arquivos do projeto
-COPY package*.json ./
-COPY . .
-
-# Instala dependências
-RUN npm install
-
-# Compila o projeto
-RUN npm run build
-
-# Expõe a porta
-EXPOSE 8080
-
-CMD ["npm", "run", "start:prod"]
+FROM atendai/evolution-api:v2.2.0
+ENV SERVER_URL=https://SEU-DOMINIO.onrender.com
+ENV API_KEY=supersecret
+ENV DATABASE_PROVIDER=postgresql
