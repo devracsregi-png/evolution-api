@@ -1,19 +1,23 @@
-// --- SEU package.json ATUAL (EXEMPLO) ---
-
 {
   "name": "evolution-api",
   "version": "2.3.6",
   "description": "",
   "main": "./src/main.ts",
   "scripts": {
+    // ESTA É A CORREÇÃO CRÍTICA
+    "build": "npx prisma generate", 
+    
     "start": "tsx ./src/main.ts"
-    // O script "build" pode estar faltando, ou não tem o "prisma generate"
+    // Adicione outros scripts de build se houver, mas garanta o 'npx prisma generate'
+    // Exemplo: "build": "npx prisma generate && tsc" 
   },
   "dependencies": {
-    "@prisma/client": "^5.x.x"
+    "@prisma/client": "^5.x.x",
+    // ... outras dependências
   },
   "devDependencies": {
     "prisma": "^5.x.x",
-    "tsx": "^4.x.x"
+    "tsx": "^4.x.x",
+    // ... outras devDependencies
   }
 }
