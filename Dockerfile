@@ -6,7 +6,8 @@ WORKDIR /app
 
 RUN npm install
 
+RUN npx prisma generate
+
 EXPOSE 8080
 
 CMD ["npm", "start"]
-
